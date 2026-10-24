@@ -1,0 +1,338 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --cream: #FFF5E4;
+    --brown: #7A2500;
+    --strawberry: #FF6F86;
+    --strawberry-dark: #F25A74;
+    --pistachio: #A8C145;
+    --pistachio-dark: #98B032;
+    --caramel: #FF9F24;
+    --caramel-dark: #F58F0B;
+    --mango: #FFC93C;
+    --mango-dark: #F0B71F;
+    --choco: #8B4A2B;
+    --choco-dark: #763A1F;
+    --vanilla: #F6E3B4;
+    --vanilla-dark: #EAD49A;
+    --white: #FFFFFF;
+    --blush: #F8D0C8;
+  }
+
+  body {
+    background-color: var(--blush);
+    color: var(--brown);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1, h2, h3, .font-script {
+    font-family: 'Pacifico', cursive;
+  }
+
+  /* Custom Right Corner Browser Scrollbar */
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--brown) var(--cream);
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--cream);
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--brown);
+    border-radius: 9999px;
+    border: 2px solid var(--cream);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--strawberry);
+  }
+}
+
+.font-script {
+  font-family: 'Pacifico', cursive;
+}
+
+.font-marker {
+  font-family: 'Permanent Marker', cursive, sans-serif;
+}
+
+.font-body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Outlined text utility */
+.text-stroke-outline {
+  color: var(--cream);
+  -webkit-text-stroke: 2.5px var(--brown);
+  text-stroke: 2.5px var(--brown);
+  paint-order: stroke fill;
+}
+
+/* Colored section text shadow for legibility */
+.text-shadow-subtle {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.22);
+}
+
+.text-shadow-contrast {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.32);
+}
+
+/* Button & Pill styles */
+.btn-pill-white {
+  background-color: #FFFFFF;
+  color: var(--brown);
+  font-weight: 700;
+  border-radius: 9999px;
+  padding: 0.75rem 1.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(122, 37, 0, 0.12);
+}
+.btn-pill-white:hover {
+  background-color: #FFF5E4;
+}
+
+.btn-pill-brown {
+  background-color: var(--brown);
+  color: #FFFFFF;
+  font-weight: 700;
+  border-radius: 9999px;
+  padding: 0.75rem 1.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(122, 37, 0, 0.18);
+}
+.btn-pill-brown:hover {
+  background-color: #5d1c00;
+}
+
+/* Hero Pill buttons */
+.btn-pill-cream {
+  background-color: #FFF5E4;
+  color: #7A2500;
+  font-weight: 700;
+  border-radius: 9999px;
+  padding: 0.7rem 1.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  font-size: 0.95rem;
+}
+.btn-pill-cream:hover {
+  background-color: #FFFFFF;
+}
+
+.btn-pill-cream-outline {
+  background-color: transparent;
+  color: #FFF5E4;
+  font-weight: 700;
+  border: 2px solid #FFF5E4;
+  border-radius: 9999px;
+  padding: 0.65rem 1.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+}
+.btn-pill-cream-outline:hover {
+  background-color: #FFF5E4;
+  color: #7A2500;
+}
+
+/* Minimal Hero animations as requested */
+@keyframes heroFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes toppingFloatSlow1 {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-7px) rotate(3deg);
+  }
+}
+
+@keyframes toppingFloatSlow2 {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(-3deg);
+  }
+}
+
+.hero-fade-up {
+  animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.topping-float-1 {
+  animation: toppingFloatSlow1 6s ease-in-out infinite;
+}
+
+.topping-float-2 {
+  animation: toppingFloatSlow2 6s ease-in-out infinite 1.5s;
+}
+
+.topping-float-3 {
+  animation: toppingFloatSlow1 6.5s ease-in-out infinite 3s;
+}
+
+.topping-float-4 {
+  animation: toppingFloatSlow2 5.5s ease-in-out infinite 0.75s;
+}
+
+/* Minimal Hero animations as requested */
+/* Crossfade animation for product serving image changes */
+@keyframes crossfadeImage {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-crossfade {
+  animation: crossfadeImage 0.3s ease-in-out;
+}
+
+/* Pop animations for stamps, badges, and wishlist */
+@keyframes stampPop {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.4;
+  }
+  60% {
+    transform: scale(1.28);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-stamp-pop {
+  animation: stampPop 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+@keyframes badgePop {
+  0% {
+    transform: scale(0.7);
+  }
+  50% {
+    transform: scale(1.35);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-badge-pop {
+  animation: badgePop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+@keyframes heartPop {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.35);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-heart-pop {
+  animation: heartPop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+/* Toast animations */
+@keyframes toastSlideInDesktop {
+  0% {
+    opacity: 0;
+    transform: translateX(30px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes toastSlideInMobile {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-toast-desktop {
+  animation: toastSlideInDesktop 0.28s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-toast-mobile {
+  animation: toastSlideInMobile 0.28s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Order Success Tick Animation: simple scale-in */
+@keyframes tickScaleIn {
+  0% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  65% {
+    transform: scale(1.18);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-tick-scale {
+  animation: tickScaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-fade-up,
+  .topping-float-1,
+  .topping-float-2,
+  .topping-float-3,
+  .topping-float-4,
+  .animate-crossfade,
+  .animate-stamp-pop,
+  .animate-badge-pop,
+  .animate-heart-pop,
+  .animate-toast-desktop,
+  .animate-toast-mobile,
+  .animate-tick-scale {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}
+

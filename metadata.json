@@ -1,0 +1,6 @@
+{
+  "name": "Scoop - Artisanal Ice Cream",
+  "description": "Every Scoop, a Little Joy. Handcrafted artisanal ice creams made with fresh ingredients in small batches.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
